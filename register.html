@@ -29,10 +29,156 @@
       <h1>INDBERET</h1>
       <section id="form-section">
         <article id="form-info">
-          <h2>Overskrift</h2>
-          <p>Tekst</p>
+          <h2>Indberet NU – din rapport kan redde liv!</h2>
+          <p>
+            Har du set en person med tomt blik, slæbende gang og et usundt udseende?<br />
+            Så er det afgørende, at du <strong>indberetter det med det samme.</strong> Hver observation hjælper myndighederne med at <strong>kortlægge spredningen</strong>, og reagere hurtigt. <br />Selv ét enkelt uindberettet møde kan føre til
+            <em>lokale udbrud</em>, panik – og i værste fald tab af liv.
+          </p>
         </article>
-        <form id="webform"></form>
+
+        <h3>Indberet Zombie-observation</h3>
+        <form id="webform">
+          <fieldset id="when">
+            <legend>Hvornår</legend>
+            <div class="form-group">
+              <p>Fandt observationen sted i dag?</p>
+              <input type="radio" id="today-yes" name="observation-today" value="yes" required />
+              <label for="today-yes">Ja</label>
+              <input type="radio" id="today-no" name="observation-today" value="no" required />
+              <label for="today-no">Nej</label>
+
+              <div id="additional-date-fields" style="display: none">
+                <p>Udfyld venligst dato og klokkeslet</p>
+                <label for="observation-date">Dato</label>
+                <input type="date" id="observation-date" name="observation-date" />
+                <label for="observation-time">Tid</label>
+                <input type="time" id="observation-time" name="observation-time" />
+              </div>
+            </div>
+          </fieldset>
+
+          <fieldset id="where">
+            <legend>Hvor</legend>
+            <div class="form-group">
+              <label class="blok" for="location">Adresse (hvor fandt observationen sted?)</label>
+              <input id="location-street" name="location-street" type="text" placeholder="STREET/CITY" required />
+            </div>
+            <div class="form-group">
+              <label class="blok" for="location">Eventuel geo-lokation</label>
+              <input id="location-geo" name="location-geo" type="text" placeholder="55.69191, 12.55478" />
+            </div>
+          </fieldset>
+
+          <fieldset id="what">
+            <legend>Hvad så du?</legend>
+            <div class="form-group">
+              <label class="blok" for="zombie-type">Hvilken slags Zombie</label>
+              <select name="zombie-type" id="zombie-type" required>
+                <option value="" disabled selected>Vælg en type</option>
+                <option value="klassisk-romero-zombie">Klassisk Romero-Zombie</option>
+                <option value="loebe-zombie">Løbe-Zombie (Rage Zombie)</option>
+                <option value="intelligens-zombie">Intelligens-Zombie (Leder-Zombie)</option>
+                <option value="influencer-zombie">Influencer-Zombie</option>
+                <option value="mutations-zombie">Mutations-Zombie (Radioaktiv)</option>
+                <option value="kendis-zombie">Kendis-Zombie</option>
+              </select>
+            </div>
+            <!-- Section for selecting the number of zombies observed -->
+            <div class="form-group"></div>
+            <label>Hvor mange Zombier observerede du?</label>
+            <div>
+              <input type="radio" id="zombie-count-1" name="zombie-count" value="1" required />
+              <label for="zombie-count-1">1</label>
+            </div>
+            <div>
+              <input type="radio" id="zombie-count-2-4" name="zombie-count" value="2-4" required />
+              <label for="zombie-count-2-5">2-5</label>
+            </div>
+            <div>
+              <input type="radio" id="zombie-count-many" name="zombie-count" value="many" required />
+              <label for="zombie-count-5-10">5-10</label>
+            </div>
+            <div>
+              <input type="radio" id="zombie-count-many" name="zombie-count" value="many" required />
+              <label for="zombie-count-flere-end-ti">Flere end 10</label>
+            </div>
+            <div>
+              <input type="radio" id="zombie-count-uncountable" name="zombie-count" value="uncountable" required />
+              <label for="zombie-count-uncountable">Så mange at jeg ikke kunne tælle dem</label>
+            </div>
+          </fieldset>
+
+          <fieldset id="behavior">
+            <legend>Adfærd</legend>
+            <p>Vælg gerne flere</p>
+            <div class="form-group">
+              <div>
+                <input type="checkbox" id="behavior1" name="behavior" value="ukoordineret-gang" />
+                <label for="behavior1">Slæbende/ukoordineret gang</label>
+              </div>
+              <div>
+                <input type="checkbox" id="behavior2" name="behavior" value="bide-angribe" />
+                <label for="behavior2">Forsøgte at bide eller angribe</label>
+              </div>
+              <div>
+                <input type="checkbox" id="behavior3" name="behavior" value="lyde-grynt-ston" />
+                <label for="behavior3">Udstødte lyde (som fx grynt eller støn)</label>
+              </div>
+              <div>
+                <input type="checkbox" id="behavior5" name="behavior" value="direkte-mod-mennesker" />
+                <label for="behavior5">Gik direkte efter mennesker uden opfordring</label>
+              </div>
+              <div>
+                <input type="checkbox" id="behavior6" name="behavior" value="stirrede-tomt" />
+                <label for="behavior6">Stirrede tomt uden at blinke</label>
+              </div>
+              <div>
+                <input type="checkbox" id="behavior8" name="behavior" value="huske-rutiner" />
+                <label for="behavior8">Viste tegn på at huske tidligere rutiner (f.eks. stiller sig i kø)</label>
+              </div>
+              <div>
+                <input type="checkbox" id="behavior9" name="behavior" value="flokadfaerd" />
+                <label for="behavior9">Udviste flokadfærd (kom i gruppe, fulgte andre zombier)</label>
+              </div>
+              <div>
+                <input type="checkbox" id="behavior10" name="behavior" value="ingen-reaktion" />
+                <label for="behavior10">Ingen reaktion på smerte eller skade</label>
+              </div>
+            </div>
+          </fieldset>
+
+          <fieldset id="description">
+            <legend>Beret med egne ord...</legend>
+            <div class="form-group">
+              <label class="blok" for="beskrivelse">Beskriv din observation med så mange detaljer som muligt </label>
+              <textarea id="beskrivelse" name="beskrivelse" placeholder="..." required></textarea>
+            </div>
+          </fieldset>
+
+          <fieldset id="danger">
+            <legend>Hvordan vurderer du farlighedniveauet?</legend>
+            <label for="farlighed">Farlighedsniveau: <span id="range-value">5</span>%</label>
+            <input type="range" name="farlighed" id="farlighed" min="0" max="100" value="5" />
+          </fieldset>
+
+          <fieldset id="contact">
+            <legend>Kontaktoplysninger</legend>
+            <div class="form-group">
+              <label class="blok" class="special" for="navn">Dit navn</label>
+              <input type="text" id="navn" name="navn" placeholder="Dit fulde navn" required />
+            </div>
+            <div class="form-group">
+              <label class="blok" class="special" for="email">Din email hvis du vil kontaktes</label>
+              <input type="email" id="email" name="email" placeholder="Din emailadresse" required />
+            </div>
+          </fieldset>
+
+          <!-- Submit button -->
+          <div class="form-group">
+            <button type="submit" id="submit-button">Indsend</button>
+          </div>
+        </form>
       </section>
       <section id="form-summary">
         <h2>Summary</h2>
@@ -67,5 +213,6 @@
         </ul>
       </nav>
     </footer>
+    <script src="js/main.js"></script>
   </body>
 </html>

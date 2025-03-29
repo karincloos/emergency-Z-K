@@ -1,12 +1,53 @@
 #webform {
   background-color: var(--form-background-color);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+fieldset {
+  background-color: #dbe2f5;
+  border: 1px solid #dbdde3;
+  padding: 1rem;
+  margin: 1rem 0;
+}
+
+form input,
+form select {
+  background-color: var(--formfield-background-color);
+  color: var(--formfield-text-color);
+  border: 1px solid var(--formfield-text-color); /* Add a border */
+  padding: 0.2rem; /* Add padding for spacing */
+  font-size: 0.9rem; /* Adjust font size */
+}
+
+form p {
+  font-size: 0.9rem;
+  margin: 0 0 0.5rem 0;
+  padding: 0;
+}
+
+.blok {
+  display: block;
+  margin-bottom: 0.1rem;
 }
 
 #form-section,
 #form-summary {
   background-color: var(--info-background-color);
+  padding: 0 1rem;
+}
+.form-group {
+  margin-bottom: 1rem;
+}
+legend {
+  font-size: 0.9rem;
+  font-weight: bold;
+  line-height: 1rem;
+  margin: 0.5rem 0;
   padding: 0;
 }
+
 #form-summary h2 {
   line-height: 3rem;
   text-align: center;
@@ -29,4 +70,37 @@
   line-height: 1.3;
   margin: 0 0 1.2rem 0;
   padding: 0;
+}
+textarea {
+  width: 100%; /* Makes the textarea take the full width of its container */
+  max-width: 620px;
+
+  height: 60px; /* Optional: Control the height */
+  padding: 0.5rem; /* Add padding for better usability */
+  resize: vertical; /* Allow only vertical resizing (optional) */
+}
+
+/* Additional date-field */
+/* ********************* */
+
+#observation-date .form-group {
+  display: flex;
+  gap: 1rem;
+}
+
+#additional-date-fields {
+  margin-top: 1.5rem;
+}
+
+/* showing danger range */
+/* ******************** */
+#danger {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+#range-value {
+  font-weight: bold;
+  color: var(--formfield-text-color);
 }
