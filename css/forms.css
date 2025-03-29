@@ -47,6 +47,14 @@ legend {
   margin: 0.5rem 0;
   padding: 0;
 }
+button {
+  background-color: var(--form-submit-bg-color);
+  color: var(--form-submit-color);
+  border: none;
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
 
 #form-summary h2 {
   line-height: 3rem;
@@ -80,20 +88,22 @@ textarea {
   resize: vertical; /* Allow only vertical resizing (optional) */
 }
 
-/* Additional date-field */
-/* ********************* */
+/* styling af date-field */
+/* Kommer kun frem hvis man har klikket nej i radiobutton */
+/* ****************************************************** */
 
 #observation-date .form-group {
   display: flex;
   gap: 1rem;
 }
 
-#additional-date-fields {
+#date-field {
   margin-top: 1.5rem;
 }
 
-/* showing danger range */
-/* ******************** */
+/* Styling af farlighedsniveau (danger range) */
+/* ******************************* */
+
 #danger {
   display: flex;
   flex-direction: column;

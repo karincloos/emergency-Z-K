@@ -1,29 +1,34 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const todayNoRadio = document.getElementById("today-no");
-  const todayYesRadio = document.getElementById("today-yes");
-  const additionalFields = document.getElementById("additional-date-fields");
+document.addEventListener("DOMContentLoaded", startEventlistnere);
 
-  todayNoRadio.addEventListener("change", () => {
-    console.log("No selected");
-    if (todayNoRadio.checked) {
-      additionalFields.style.display = "block";
-    }
-  });
+// opretter constanter for datofeltet
+const todayNoRadio = document.querySelector("#today-no");
+const todayYesRadio = document.querySelector("#today-yes");
+const dateField = document.querySelector("#date-field");
 
-  todayYesRadio.addEventListener("change", () => {
-    console.log("Yes selected");
-    if (todayYesRadio.checked) {
-      additionalFields.style.display = "none";
-    }
-  });
-});
+// opretter constanter for farlighed (range feltet)
+const rangeInput = document.getElementById("farlighed");
+const rangeValue = document.getElementById("range-value");
 
-document.addEventListener("DOMContentLoaded", () => {
-  const rangeInput = document.getElementById("farlighed");
-  const rangeValue = document.getElementById("range-value");
+function startEventlistnere() {
+  // tilføjer eventlistnere for radiobuttons og range input
+  todayNoRadio.addEventListener("change", showDateField);
+  todayYesRadio.addEventListener("change", hideDateField);
 
-  // Update the displayed value when the range slider changes
-  rangeInput.addEventListener("input", () => {
-    rangeValue.textContent = rangeInput.value;
-  });
-});
+  // tilføjer eventlistner for range input feltet
+  rangeInput.addEventListener("input", displayRangeValue);
+}
+
+// funktion der viser datofeltet
+function showDateField() {
+  dateField.style.display = "block";
+}
+
+// funktion der skjuler datofeltet
+function hideDateField() {
+  dateField.style.display = "none";
+}
+
+// funktion der viser værdien af range input feltet
+function displayRangeValue() {
+  rangeValue.textContent = rangeInput.value;
+}

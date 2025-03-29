@@ -40,21 +40,20 @@
         <h3>Indberet Zombie-observation</h3>
         <form id="webform">
           <fieldset id="when">
-            <legend>Hvornår</legend>
+            <legend>Hvornår?</legend>
             <div class="form-group">
               <p>Fandt observationen sted i dag?</p>
-              <input type="radio" id="today-yes" name="observation-today" value="yes" required />
+              <input type="radio" id="today-yes" name="is-it-today" value="yes" required />
               <label for="today-yes">Ja</label>
-              <input type="radio" id="today-no" name="observation-today" value="no" required />
+              <input type="radio" id="today-no" name="is-it-today" value="no" required />
               <label for="today-no">Nej</label>
-
-              <div id="additional-date-fields" style="display: none">
-                <p>Udfyld venligst dato og klokkeslet</p>
-                <label for="observation-date">Dato</label>
-                <input type="date" id="observation-date" name="observation-date" />
-                <label for="observation-time">Tid</label>
-                <input type="time" id="observation-time" name="observation-time" />
-              </div>
+            </div>
+            <div id="date-field" class="form-group" style="display: none">
+              <p>Udfyld venligst dato og klokkeslet for observationen</p>
+              <label for="observation-date">Dato</label>
+              <input type="date" id="observation-date" name="observation-date" />
+              <label for="observation-time">Tid</label>
+              <input type="time" id="observation-time" name="observation-time" />
             </div>
           </fieldset>
 
@@ -176,7 +175,7 @@
 
           <!-- Submit button -->
           <div class="form-group">
-            <button type="submit" id="submit-button">Indsend</button>
+            <button type="submit" id="submit-button">Indsend &#8594;</button>
           </div>
         </form>
       </section>
