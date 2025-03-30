@@ -83,46 +83,54 @@
           </fieldset>
           <!-- Hvad - type og antal -->
           <fieldset id="what">
-            <legend>Hvad så du?</legend>
+            <legend>Hvad?</legend>
+            <div class="formcontainer">
+              <div class="form-group">
+                <label class="blok" for="zombie-type">Hvilken slags Zombie</label>
+                <select name="zombie-type" id="zombie-type" required>
+                  <option value="" disabled selected>Vælg en type</option>
+                  <option value="klassisk-romero-zombie">Klassisk Romero-Zombie</option>
+                  <option value="loebe-zombie">Løbe-Zombie (Rage Zombie)</option>
+                  <option value="intelligens-zombie">Intelligens-Zombie (Leder-Zombie)</option>
+                  <option value="influencer-zombie">Influencer-Zombie</option>
+                  <option value="mutations-zombie">Mutations-Zombie (Radioaktiv)</option>
+                  <option value="kendis-zombie">Kendis-Zombie</option>
+                </select>
+              </div>
+              <div id="zombie-info" style="display: none"></div>
+            </div>
+          </fieldset>
+          <!-- amount -->
+          <fieldset id="amount">
+            <legend>Antal?</legend>
             <div class="form-group">
-              <label class="blok" for="zombie-type">Hvilken slags Zombie</label>
-              <select name="zombie-type" id="zombie-type" required>
-                <option value="" disabled selected>Vælg en type</option>
-                <option value="klassisk-romero-zombie">Klassisk Romero-Zombie</option>
-                <option value="loebe-zombie">Løbe-Zombie (Rage Zombie)</option>
-                <option value="intelligens-zombie">Intelligens-Zombie (Leder-Zombie)</option>
-                <option value="influencer-zombie">Influencer-Zombie</option>
-                <option value="mutations-zombie">Mutations-Zombie (Radioaktiv)</option>
-                <option value="kendis-zombie">Kendis-Zombie</option>
-              </select>
-            </div>
-            <!-- Section for selecting the number of zombies observed -->
-            <div class="form-group"></div>
-            <label>Hvor mange Zombier observerede du?</label>
-            <div>
-              <input type="radio" id="zombie-count-1" name="zombie-count" value="1" required />
-              <label for="zombie-count-1">1</label>
-            </div>
-            <div>
-              <input type="radio" id="zombie-count-2-4" name="zombie-count" value="2-4" required />
-              <label for="zombie-count-2-5">2-5</label>
-            </div>
-            <div>
-              <input type="radio" id="zombie-count-many" name="zombie-count" value="many" required />
-              <label for="zombie-count-5-10">5-10</label>
-            </div>
-            <div>
-              <input type="radio" id="zombie-count-many" name="zombie-count" value="many" required />
-              <label for="zombie-count-flere-end-ti">Flere end 10</label>
-            </div>
-            <div>
-              <input type="radio" id="zombie-count-uncountable" name="zombie-count" value="uncountable" required />
-              <label for="zombie-count-uncountable">Så mange at jeg ikke kunne tælle dem</label>
+              <!-- Section for selecting the number of zombies observed -->
+              <p>Hvor mange Zombier observerede du?</p>
+              <div>
+                <input type="radio" id="zombie-count-1" name="zombie-count" value="1" required />
+                <label for="zombie-count-1">1</label>
+              </div>
+              <div>
+                <input type="radio" id="zombie-count-2-4" name="zombie-count" value="2-4" required />
+                <label for="zombie-count-2-5">2-5</label>
+              </div>
+              <div>
+                <input type="radio" id="zombie-count-many" name="zombie-count" value="many" required />
+                <label for="zombie-count-5-10">5-10</label>
+              </div>
+              <div>
+                <input type="radio" id="zombie-count-many" name="zombie-count" value="many" required />
+                <label for="zombie-count-flere-end-ti">Flere end 10</label>
+              </div>
+              <div>
+                <input type="radio" id="zombie-count-uncountable" name="zombie-count" value="uncountable" required />
+                <label for="zombie-count-uncountable">Så mange at jeg ikke kunne tælle dem</label>
+              </div>
             </div>
           </fieldset>
           <!-- Adfærd -->
           <fieldset id="behavior">
-            <legend>Adfærd</legend>
+            <legend>Adfærd?</legend>
             <p>Vælg gerne flere</p>
             <div class="form-group">
               <div>
@@ -159,6 +167,12 @@
               </div>
             </div>
           </fieldset>
+          <!-- Farlighed (range) -->
+          <fieldset id="danger">
+            <legend>Farlighed?</legend>
+            <label for="farlighed">Din vurdering af fareniveauet: <span id="range-value">0</span>%</label>
+            <input type="range" name="farlighed" id="farlighed" min="0" max="100" value="5" />
+          </fieldset>
           <!-- Beskrivelse (tekst) -->
           <fieldset id="description">
             <legend>Hvad skete der?</legend>
@@ -166,12 +180,6 @@
               <label class="blok" for="beskrivelse">Beskriv din observation med egne ord og så mange detaljer som muligt </label>
               <textarea id="beskrivelse" name="beskrivelse" placeholder="..." required></textarea>
             </div>
-          </fieldset>
-          <!-- Farlighed (range) -->
-          <fieldset id="danger">
-            <legend>Fareniveau</legend>
-            <label for="farlighed">Din vurdering af fareniveauet: <span id="range-value">0</span>%</label>
-            <input type="range" name="farlighed" id="farlighed" min="0" max="100" value="5" />
           </fieldset>
           <!-- Kontakt -->
           <fieldset id="contact">
