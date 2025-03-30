@@ -3,6 +3,7 @@
   font-family: Arial, Helvetica, sans-serif;
   font-size: 0.9rem;
   line-height: 1.4;
+  /* accent-color: #ff4b00; */
 }
 
 fieldset {
@@ -12,19 +13,56 @@ fieldset {
   margin: 1rem 0;
 }
 
-form input,
-form select {
+input,
+select,
+textarea,
+range {
   background-color: var(--formfield-background-color);
   color: var(--formfield-text-color);
-  border: 1px solid var(--formfield-text-color); /* Add a border */
-  padding: 0.2rem; /* Add padding for spacing */
-  font-size: 0.9rem; /* Adjust font size */
+  border: 1px solid var(--formfield-background-color);
+  padding: 0.2rem;
+  font-size: 0.9rem;
+}
+
+/* input:invalid,
+textarea:invalid,
+select:invalid{
+  background-color: initial;
+  border: none;
+} */
+
+input:invalid:focus,
+textarea:invalid:focus,
+select:invalid:focus {
+  outline: none;
+  border: 1px solid red;
+  box-shadow: 0 0 10px red;
 }
 
 form p {
   font-size: 0.9rem;
   margin: 0 0 0.5rem 0;
   padding: 0;
+}
+
+.formcontainer {
+  display: flex;
+  justify-content: flex-start;
+}
+
+#where .form-group {
+  margin-right: 1rem;
+}
+
+#location-number,
+#location-zipcode {
+  max-width: 55px;
+}
+
+h3 {
+  background-color: #000;
+  color: #fff;
+  padding: 0.5rem 1rem;
 }
 
 .blok {
@@ -54,6 +92,7 @@ button {
   padding: 0.5rem 1rem;
   font-size: 0.9rem;
   cursor: pointer;
+  margin: 0 0 1rem;
 }
 
 #form-summary h2 {
@@ -80,15 +119,18 @@ button {
   padding: 0;
 }
 textarea {
-  width: 100%; /* Makes the textarea take the full width of its container */
+  width: 100%;
   max-width: 620px;
-
   height: 60px; /* Optional: Control the height */
   padding: 0.5rem; /* Add padding for better usability */
   resize: vertical; /* Allow only vertical resizing (optional) */
 }
 
-/* styling af date-field */
+input::placeholder {
+  color: var(--formfield-placeholder-color);
+}
+
+/* styling af date-field*/
 /* Kommer kun frem hvis man har klikket nej i radiobutton */
 /* ****************************************************** */
 
@@ -108,9 +150,4 @@ textarea {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
-}
-
-#range-value {
-  font-weight: bold;
-  color: var(--formfield-text-color);
 }

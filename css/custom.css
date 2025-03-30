@@ -55,7 +55,8 @@
   --cta-text-color-inverted: #bbc3ca;
   --followup-text-color: #000;
   --followup-text-color-inverted: #bbc3ca;
-  --formfield-text-color: #6f90eb;
+  --formfield-placeholder-color: #6f90eb;
+  --formfield-text-color: #000000;
   --form-submit-color: #fff;
   --form-submit-color-inverted: #bbc3ca;
 
@@ -66,7 +67,7 @@
   --news-background-color: #dbdde3;
   --news-background-color-inverted: #eeebe9;
   --info-background-color: #fff;
-  --headline-bg-color: #dbdde3;
+  --headline-bg-color: #000;
   --headline-bg-color-alert: #ff4b00;
   --headline-bg-color-inverted: #000;
   --bodytext-bg-color: #dbdde3;
