@@ -53,6 +53,13 @@ form p {
 #what .form-group {
   margin-right: 2rem;
 }
+#contact .formcontainer {
+  gap: 1rem;
+}
+
+#what label {
+  display: block;
+}
 
 #zombie-info {
   background-color: #6f90eb;
