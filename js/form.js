@@ -75,8 +75,6 @@ function updateSummary() {
 function updateZombieInfo() {
   const selectedValue = zombieTypeSelect.value;
 
-  zombieInfoDiv.style.display = "block";
-
   // Define additional text for each zombie type using if-else
   let infoText = "";
   if (selectedValue === "klassisk-romero-zombie") {
@@ -92,10 +90,14 @@ function updateZombieInfo() {
   } else if (selectedValue === "kendis-zombie") {
     infoText = "En glamourøs zombie med rester af tidligere status. Stadig genkendelig og populær – og derfor endnu mere farlig i menneskemængder. Kan tiltrække fans, selv når den forsøger at spise dem.";
   } else {
-    zombieInfoDiv.style.display = "none";
+    // Hide the div by removing the visible class
+    zombieInfoDiv.classList.remove("visible");
   }
 
   // Update the content of the zombie-info div
   zombieInfoDiv.innerHTML = `<p><strong>${zombieTypeSelect.options[zombieTypeSelect.selectedIndex].text}</strong></p>
                              <p>${infoText}</p>`;
+
+  // Show the div by adding the visible class
+  zombieInfoDiv.classList.add("visible");
 }
