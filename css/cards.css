@@ -88,3 +88,26 @@
   content: "\2192";
   margin-left: 0.5rem;
 }
+
+#pan {
+  background-image: url(../assets/zombie-run.png);
+  background-size: cover;
+  background-position: 0% 0%;
+}
+
+.panorama {
+  animation: panorama 5s linear infinite alternate;
+}
+
+@keyframes panorama {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 100% 0;
+  }
+}
+
+.stop {
+  animation-play-state: paused;
+}
